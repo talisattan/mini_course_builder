@@ -4,13 +4,14 @@
 
 - Plain HTML, CSS, and JavaScript only.
 - No frameworks, no build step: files open directly in a browser.
+- Fonts (Fraunces, Source Sans 3) load from Google Fonts with a `<link>`.
 
 ## Project Structure
 
 ```
 CLAUDE.md          # this file
 index.html         # one long scrolling page: one <section> per lesson
-css/styles.css     # plain styles, light and dark theme colours
+css/styles.css     # "Green Leaf" design: colours, fonts, layout, light and dark themes
 js/theme.js        # light/dark toggle (light by default)
 js/sections.js     # highlights the lesson being read in the contents list
 js/tabs.js         # switches between the Lesson and Quiz tabs
