@@ -75,3 +75,48 @@ html {
 .back {
   font-size: 0.9rem;
 }
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tabs [aria-selected="true"] {
+  font-weight: bold;
+  border-bottom: 3px solid var(--link);
+}
+
+.question {
+  margin: 16px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+}
+
+.question legend {
+  font-weight: bold;
+}
+
+.option {
+  display: block;
+  margin: 6px 0;
+  padding: 6px;
+  border: 1px solid transparent;
+}
+
+.option.is-correct {
+  border-color: #2e7d32;
+}
+
+.option.is-wrong {
+  border-color: #c62828;
+}
+
+.feedback {
+  margin: 8px 0 0;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

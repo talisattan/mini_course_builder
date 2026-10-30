@@ -13,6 +13,12 @@
     <button type="button" id="theme-toggle" aria-pressed="false">Dark theme</button>
   </header>
 
+  <div class="tabs" role="tablist" aria-label="Course sections">
+    <button type="button" role="tab" id="tab-lesson" aria-controls="panel-lesson" aria-selected="true">Lesson</button>
+    <button type="button" role="tab" id="tab-quiz" aria-controls="panel-quiz" aria-selected="false" tabindex="-1">Quiz</button>
+  </div>
+
+  <div id="panel-lesson" role="tabpanel" aria-labelledby="tab-lesson">
   <nav id="contents" class="lesson-nav" aria-label="Lessons">
     <ol id="lesson-list">
       <li><a href="#outcomes">Learning Outcomes</a></li>
@@ -127,8 +133,18 @@
       <p class="back"><a href="#contents">Back to contents</a></p>
     </section>
   </main>
+  </div>
+
+  <div id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
+    <h2>Quiz</h2>
+    <p>Eight questions on the lesson. Choose one answer for each. You will see straight away whether it was right, and your score once all eight are answered.</p>
+    <div id="quiz"></div>
+    <div id="score" aria-live="polite"></div>
+  </div>
 
 
+  <script src="js/tabs.js"></script>
+  <script src="js/quiz.js"></script>
   <script src="js/sections.js"></script>
 </body>
 </html>

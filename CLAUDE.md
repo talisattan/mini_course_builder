@@ -13,6 +13,8 @@ index.html         # one long scrolling page: one <section> per lesson
 css/styles.css     # plain styles, light and dark theme colours
 js/theme.js        # light/dark toggle (light by default)
 js/sections.js     # highlights the lesson being read in the contents list
+js/tabs.js         # switches between the Lesson and Quiz tabs
+js/quiz.js         # the 8-question quiz: instant feedback, score at the end
 ```
 
 The source slide deck is not stored in the repository.
