@@ -1,0 +1,78 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555555;
+  --border: #cccccc;
+  --link: #0b5cad;
+}
+
+:root[data-theme="dark"] {
+  --bg: #161616;
+  --text: #eeeeee;
+  --muted: #aaaaaa;
+  --border: #444444;
+  --link: #7db8ff;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 16px 32px;
+  max-width: 44rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--link); }
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+button {
+  font: inherit;
+  padding: 6px 12px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+button:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+.lesson-nav ol {
+  margin: 16px 0;
+  padding-left: 1.5rem;
+}
+
+.lesson-nav a[aria-current="true"] {
+  font-weight: bold;
+}
+
+.lesson h2 {
+  margin-top: 8px;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--muted);
+}

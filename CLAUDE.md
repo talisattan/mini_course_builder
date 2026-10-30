@@ -7,15 +7,15 @@
 
 ## Project Structure
 
-The repository is nearly empty for now. Files will live at the top level
-until the project grows:
+```
+CLAUDE.md          # this file
+index.html         # the course page: one <section> per lesson
+css/styles.css     # plain styles, light and dark theme colours
+js/theme.js        # light/dark toggle (light by default)
+js/sections.js     # shows one lesson at a time, driven by the URL hash
+```
 
-```
-CLAUDE.md      # this file
-index.html     # (planned) main page
-css/           # (planned) stylesheets
-js/            # (planned) scripts
-```
+The source slide deck is not stored in the repository.
 
 Update this section whenever files or folders are added.
 
