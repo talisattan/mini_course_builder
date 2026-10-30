@@ -50,11 +50,6 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
-  color: var(--muted);
-  cursor: default;
-}
-
 .lesson-nav ol {
   margin: 16px 0;
   padding-left: 1.5rem;
@@ -64,15 +59,19 @@ button:disabled {
   font-weight: bold;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.lesson {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
 .lesson h2 {
   margin-top: 8px;
 }
 
-.pager {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: 24px;
-  color: var(--muted);
+.back {
+  font-size: 0.9rem;
 }

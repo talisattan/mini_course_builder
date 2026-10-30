@@ -9,10 +9,10 @@
 
 ```
 CLAUDE.md          # this file
-index.html         # the course page: one <section> per lesson
+index.html         # one long scrolling page: one <section> per lesson
 css/styles.css     # plain styles, light and dark theme colours
 js/theme.js        # light/dark toggle (light by default)
-js/sections.js     # shows one lesson at a time, driven by the URL hash
+js/sections.js     # highlights the lesson being read in the contents list
 ```
 
 The source slide deck is not stored in the repository.

@@ -1,48 +1,24 @@
-// Shows one lesson at a time. The address hash (#policy) says which one,
-// so links and the browser back button work without separate pages.
+// The course is one long page. This only marks the lesson being read
+// in the contents list; the links themselves are plain anchors.
 (function () {
-  var sections = Array.prototype.slice.call(document.querySelectorAll('.lesson'));
-  var links = Array.prototype.slice.call(document.querySelectorAll('#lesson-list a'));
-  var prev = document.getElementById('prev');
-  var next = document.getElementById('next');
-  var position = document.getElementById('position');
-  var current = 0;
+  if (!('IntersectionObserver' in window)) return;
 
-  function indexFromHash() {
-    var id = window.location.hash.slice(1);
-    for (var i = 0; i < sections.length; i++) {
-      if (sections[i].id === id) return i;
-    }
-    return 0;
-  }
-
-  function show(index) {
-    current = index;
-    sections.forEach(function (section, i) {
-      section.hidden = i !== index;
-    });
-    links.forEach(function (link, i) {
-      if (i === index) {
-        link.setAttribute('aria-current', 'true');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
-    prev.disabled = index === 0;
-    next.disabled = index === sections.length - 1;
-    position.textContent = 'Lesson ' + (index + 1) + ' of ' + sections.length;
-  }
-
-  function go(index) {
-    window.location.hash = sections[index].id;
-  }
-
-  window.addEventListener('hashchange', function () {
-    show(indexFromHash());
-    window.scrollTo(0, 0);
+  var links = {};
+  document.querySelectorAll('#lesson-list a').forEach(function (link) {
+    links[link.getAttribute('href').slice(1)] = link;
   });
-  prev.addEventListener('click', function () { go(current - 1); });
-  next.addEventListener('click', function () { go(current + 1); });
 
-  show(indexFromHash());
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      Object.keys(links).forEach(function (id) {
+        links[id].removeAttribute('aria-current');
+      });
+      links[entry.target.id].setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '0px 0px -70% 0px' });
+
+  document.querySelectorAll('.lesson').forEach(function (section) {
+    observer.observe(section);
+  });
 })();
