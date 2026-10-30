@@ -100,17 +100,21 @@
       feedback.setAttribute('aria-live', 'polite');
 
       item.options.forEach(function (text, oi) {
-        var label = document.createElement('label');
-        label.className = 'option';
+        var row = document.createElement('div');
+        row.className = 'option';
         var input = document.createElement('input');
         input.type = 'radio';
         input.name = 'q' + qi;
+        input.id = 'q' + qi + 'o' + oi;
         input.addEventListener('change', function () {
           choose(box, feedback, item, oi);
         });
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(' ' + text));
-        box.appendChild(label);
+        var label = document.createElement('label');
+        label.htmlFor = input.id;
+        label.textContent = text;
+        row.appendChild(input);
+        row.appendChild(label);
+        box.appendChild(row);
       });
 
       box.appendChild(feedback);

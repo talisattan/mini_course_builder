@@ -98,7 +98,9 @@ html {
 }
 
 .option {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   margin: 6px 0;
   padding: 6px;
   border: 1px solid transparent;
